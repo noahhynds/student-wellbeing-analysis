@@ -154,3 +154,31 @@ WHERE fincur BETWEEN 1 AND 5
   AND belong1 BETWEEN 1 AND 6
 GROUP BY belong1, fincur
 ORDER BY belong1, fincur;
+
+-- E[outcomes|fincur, finpast]
+-- compare current financial stress levels
+-- with past financial stress levels
+SELECT
+    fincur, 
+    finpast,
+    COUNT(*) AS n_students,
+    ROUND(AVG(deprawsc), 2) AS avg_depression,
+    ROUND(AVG(anx_score), 2) AS avg_anxiety,
+    ROUND(AVG(flourish), 2) AS avg_flourish
+FROM students
+GROUP BY fincur, finpast
+ORDER BY fincur, finpast;
+
+-- E[outcomes|finpast, fincur]
+-- compare past financial stress levels
+-- with curren financial stress levels
+SELECT
+    finpast, 
+    fincur,
+    COUNT(*) AS n_students,
+    ROUND(AVG(deprawsc), 2) AS avg_depression,
+    ROUND(AVG(anx_score), 2) AS avg_anxiety,
+    ROUND(AVG(flourish), 2) AS avg_flourish
+FROM students
+GROUP BY finpast, fincur
+ORDER BY finpast, fincur;
