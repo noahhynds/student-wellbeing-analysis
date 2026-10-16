@@ -1,6 +1,6 @@
 # Student Well-Being Analysis
-Exploring factors associated with university student mental health and well-being
 
+Exploring factors associated with university student mental health and well-being
 
 ## Data Source
 
@@ -16,8 +16,6 @@ Data being used for this project is from:
 The HMS student codebooks are being used to interpret data definitions, survey questions, survey logic, and variable coding. The codebooks were also used in assesing the comparability of the datasets before combining and making analyses on the data.
 
 The microdata being used will not be included in this repository as following proper HMS data-use guidelines.
-
-
 
 ## References
 

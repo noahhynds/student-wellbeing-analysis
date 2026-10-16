@@ -85,4 +85,4 @@ are retained.
 
 Survey design and module selection may affect the availability of some
 variables, particularly `alc_any`, so missing values should not automatically
-be interpreted as negative responses.
+be interpreted as negative responses
