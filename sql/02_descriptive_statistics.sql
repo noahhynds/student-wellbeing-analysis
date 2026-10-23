@@ -5,7 +5,6 @@ LIMIT 10;
 
 
 -- Avg outcomes based by year
-
 SELECT survey_year,
     ROUND(AVG(flourish), 2) AS average_flourish,
     ROUND(AVG(deprawsc), 2) AS average_deprawsc,
@@ -182,3 +181,31 @@ SELECT
 FROM students
 GROUP BY finpast, fincur
 ORDER BY finpast, fincur;
+
+-- Proportion of students that are international vs domestic
+SELECT
+    CASE
+        WHEN international = 1 THEN "International"
+        WHEN international = 0 THEN "Domestic"
+    END AS student_type
+FROM students
+LIMIT 10;
+
+SELECT
+    CASE
+        WHEN international = 1 THEN 'International'
+        WHEN international = 0 THEN 'Domestic'
+        ELSE 'Missing'
+    END AS student_type,
+
+    COUNT(*) AS n_students,
+
+    ROUND(COUNT(*) * 1.0 / SUM(COUNT(*)) OVER (), 4
+    ) AS proportion,
+
+    ROUND(
+        COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2
+    ) AS percentage
+
+FROM students
+GROUP BY international;
