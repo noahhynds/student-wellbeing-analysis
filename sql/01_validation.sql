@@ -1,3 +1,7 @@
+-- ========================================
+-- 01. VALIDATION
+-- ========================================
+
 -- Verify data has been properly cleaned and combined
 -- make sure it is reliable
 
