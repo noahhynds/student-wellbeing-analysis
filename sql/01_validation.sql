@@ -58,3 +58,10 @@ SELECT
     AS null_count_survey_year
 FROM students;
 
+-- Missing percentages by year
+
+-- Min, max, avg for age
+SELECT MIN(age) AS min_age,
+    MAX(age) AS max_age,
+    AVG(age) AS avg_age
+FROM students;
